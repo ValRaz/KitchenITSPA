@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const API_KEY = process.env.RECIPE_API_KEY;
-const API_BASE_URL = 'https://api.spoonacular.com/recipes';
+const API_BASE_URL = 'https://api.spoonacular.com/recipes/complexSearch';
 
 //Fetches recipes from Spoonacular based on query string.
 export async function fetchRecipes(query) {
