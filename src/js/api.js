@@ -6,9 +6,16 @@ export async function fetchRecipes(query) {
   const url = `${API_BASE_URL}/complexSearch?query=${query}&apiKey=${API_KEY}`;
   try {
     const response = await fetch(url);
-    if (!response.ok) throw new Error('Network response was not ok');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
     const data = await response.json();
-    return data.results;
+
+    if (data.results.length === 0) {
+      throw new Error('No recipes found');
+    }
+
+    return data.results; 
   } catch (error) {
     console.error('Error fetching recipes:', error);
     throw error;
