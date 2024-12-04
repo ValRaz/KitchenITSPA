@@ -118,7 +118,7 @@ main {
   padding: 25px; 
   background-color: #c861ff; 
   color: #333333; 
-  border: none;
+  border: solid;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
@@ -134,7 +134,7 @@ main {
   padding: 25px; 
   background-color: #fcca8d;
   color: #333333;
-  border: none;
+  border: solid;
   border-radius: 5px;
   font-size: 1rem; 
   cursor: pointer;
