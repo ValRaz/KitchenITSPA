@@ -83,6 +83,7 @@ main {
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+  gap: 25px;
 }
 
 .recipe-card:hover {
@@ -95,6 +96,7 @@ main {
   height: auto;
   object-fit: cover;
   max-height: 200px;
+  margin-bottom: 25px;
 }
 .recipe-card h3 {
   font-size: 1.25rem;
@@ -104,6 +106,43 @@ main {
 .recipe-card p {
   margin: 0 0.5rem 1rem;
   font-size: 0.9rem;
+}
+
+.recipe-card button {
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+/*View details button*/
+.view-details {
+  padding: 25px; 
+  background-color: #c861ff; 
+  color: #333333; 
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details:hover {
+  background-color: #4a90e2;
+}
+
+/*Favorite Button*/
+.favorite-button {
+  padding: 25px; 
+  background-color: #fcca8d;
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.favorite-button:hover {
+  background-color: #c861ff;
 }
 
 .modal {
