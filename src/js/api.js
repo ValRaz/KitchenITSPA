@@ -21,3 +21,17 @@ export async function fetchRecipes(query) {
     throw error;
   }
 }
+
+// Fetches detailed information about a specific recipe by its ID.
+export async function fetchRecipeDetails(recipeId) {
+  const url = `${API_BASE_URL}/${recipeId}/information?apiKey=${API_KEY}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Network response was not ok');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching recipe details:', error);
+    throw error;
+  }
+}
