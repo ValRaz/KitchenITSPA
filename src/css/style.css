@@ -114,7 +114,7 @@ main {
 }
 
 /*View details button*/
-.view-details {
+.view-details, .view-favorites-button {
   padding: 25px; 
   background-color: #c861ff; 
   color: #333333; 
@@ -123,35 +123,71 @@ main {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 10px 0;
 }
 
-.view-details:hover {
+.view-details:hover, .view-favorites-button {
   background-color: #4a90e2;
 }
 
-/*Favorite Button*/
-.favorite-button {
-  padding: 25px; 
+/* Add/Remove from Favorites buttons */
+.add-favorite-button,
+.remove-favorite-button {
   background-color: #fcca8d;
   color: #333333;
   border: solid;
   border-radius: 5px;
-  font-size: 1rem; 
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.favorite-button:hover {
+.add-favorite-button:hover,
+.remove-favorite-button:hover {
   background-color: #c861ff;
 }
 
+/* View Favorites Button */
+#view-favorites-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Spinner*/
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.spinner-circle {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Recipe details modal*/
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,6 +201,7 @@ main {
   max-width: 80%;
   max-height: 80%;
   overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .close-btn {
@@ -173,8 +210,17 @@ main {
   right: 10px;
   font-size: 2.5em;
   cursor: pointer;
+  color: #000;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
+.close-btn:hover {
+  color: #fcca8d;;
+}
+
+/*Footer*/
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -184,23 +230,55 @@ footer {
   font-weight: bolder;
 }
 
+/*Media Queries*/
+/* Medium screens*/
 @media (max-width: 900px) {
   .recipe-card {
-    width: calc(100% - 40px);
+    width: calc(50% - 20px);
+    margin: 10px;
   }
-}
-
-@media (max-width: 600px) {
-  .recipe-card {
-    width: calc(100% - 40px);
-  }
-}
-
-@media (max-width: 400px) {
   header nav a {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   footer {
+    font-size: 1.1rem;
+  }
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Small screens*/
+@media (max-width: 600px) {
+  .recipe-card {
+    width: calc(100% - 20px); 
+    margin: 10px;
+  }
+  header nav {
+    display: block;
+  }
+  header nav a {
     font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  footer {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Extra small screens*/
+@media (max-width: 400px) {
+  header nav a {
+    font-size: 1rem;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+  .recipe-card {
+    padding: 10px;
   }
 }
