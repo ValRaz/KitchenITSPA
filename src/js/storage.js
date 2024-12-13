@@ -30,19 +30,11 @@ export function loadFavorites() {
 
 // Remove a recipe from favorites by ID
 export function removeFromFavorites(recipeId) {
-    console.log(localStorage.getItem('favorites'));
-    console.log('Attempting to remove recipe with ID:', recipeId);
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    console.log('Favorites before removal:', favorites);
 
-    // Remove the recipe from the favorites array by ensuring type consistency
     favorites = favorites.filter(recipe => recipe.id !== parseInt(recipeId, 10));
 
-    console.log('Favorites after removal:', favorites);
-
-    // Save the updated favorites array back to localStorage
     localStorage.setItem('favorites', JSON.stringify(favorites));
-
-    // Ensure the "View Favorites" button updates after removal
+    
     displayViewFavoritesButton();
 }

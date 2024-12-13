@@ -7,7 +7,7 @@ export async function addFavorite(recipeId) {
     try {
         const recipe = await fetchRecipeDetails(recipeId);
         saveToFavorites(recipe);
-        displayViewFavoritesButton(); // Ensure the "View Favorites" button updates after adding
+        displayViewFavoritesButton(); 
     } catch (error) {
         console.error('Error fetching recipe details:', error);
     }
@@ -16,7 +16,7 @@ export async function addFavorite(recipeId) {
 // Removes a recipe from favorites
 export function removeFavorite(recipeId) {
     removeFromFavorites(recipeId);
-    displayViewFavoritesButton(); // Ensure the "View Favorites" button updates after removal
+    displayViewFavoritesButton();
 }
 
 // Checks if a recipe is in favorites
