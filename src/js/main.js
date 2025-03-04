@@ -1,4 +1,5 @@
 import { handleSearch } from './search.js';
+import '../css/style.css';
 
 // Search bar listener
 const searchBar = document.getElementById('search-bar');

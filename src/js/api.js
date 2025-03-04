@@ -1,4 +1,4 @@
-const API_KEY = import.meta.env.VITE_RECIPE_API_KEY;
+import { API_KEY } from '../config';
 const API_BASE_URL = 'https://api.spoonacular.com/recipes';
 
 //Fetches recipes from Spoonacular based on query string.
